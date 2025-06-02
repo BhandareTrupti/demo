@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-bucket555"   # ✅ no space here
-    key    = "terraform.tfstate"
+    bucket = "terraform-bucket555"     # ← NO trailing space
     region = "us-east-1"
+    key    = "terraform.tfstate"
   }
 }
 
@@ -23,7 +23,6 @@ resource "aws_instance" "web" {
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  default     = "t2.micro"
   description = "this is now basic instance"
-  
 }
