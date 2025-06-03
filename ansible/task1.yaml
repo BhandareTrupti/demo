@@ -12,5 +12,5 @@
     - name: 3rd task
       debug:
         msg: "Hello this is {{movie}}-2" 
-        vars:
+      vars:
         movie: "Iroman"   
