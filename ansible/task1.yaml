@@ -4,3 +4,6 @@
     - name: 1st task
       debug:
         msg: "Hello this is my first task"
+    - name: 2nd task
+      debug:
+        msg: "Hello this is ansible"
