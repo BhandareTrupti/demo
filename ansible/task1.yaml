@@ -5,7 +5,7 @@
   tasks:
     - name: 1st task
       debug:
-        msg: "Hello this ${{movie}}"
+        msg: "Hello this {{movie}}"
     - name: 2nd task
       debug:
-        msg: "Hello this is ${{movie}}-2"
+        msg: "Hello this is {{movie}}-2"
