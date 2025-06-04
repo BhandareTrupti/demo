@@ -27,4 +27,10 @@
       register: URL
     - name: print hostname
       debug:
-        msg: "this is {{ URL.stdout }}"          
+        msg: "this is {{ URL.stdout }}"    
+
+    - name: gathering facts
+      debug:
+        msg: "Hello this is {{ ansible_os_family }}"
+      vars:
+        movie: "Ironman"          
