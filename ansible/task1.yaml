@@ -24,7 +24,7 @@
 
     - name: get hostname
       shell: hostname
-      register: url
+      register: URL
     - name: print hostname
       debug:
         msg: "this is {{ URL.stdout }}"          
