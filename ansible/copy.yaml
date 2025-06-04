@@ -1,7 +1,7 @@
 - name: my copy module usecase
   hosts: all
   become: true 
-  
+
   tasks: 
    - name: install apache2
      apt:
@@ -18,5 +18,5 @@
      service:
        name: apache2
        state: restarted
-       enbled: yes
+       enabled: yes
          
