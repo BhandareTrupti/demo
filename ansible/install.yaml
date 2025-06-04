@@ -5,31 +5,44 @@
 - name: installation file 
   hosts: all
   become: true
+  gather_facts: yes
+
   tasks: 
     - name: install apache2
       apt:
         name: apache2
-        state: latest
+        state: present
         update_cache: yes
       when: ansible_os_family == "Debian"
+
     - name: install httpd
       yum:
         name: httpd
         state: present
+        update_cache: yes
       when: ansible_os_family == "RedHat"   
 
 
     - name: install httpd
-      package:
-        name: nginx
+      yum:
+        name: httpd
         state: present
+        update_cache: yes
       when: ansible_os_family == "Debian"   
 
     - name: install nginx
-      systemd:
+      package:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: start nginx
+      service:
         name: nginx
         state: started
-        enabled: yes
+        enbled: yes
+        
+
     - name: print list
       debug:
         msg: "{{ item }}"
