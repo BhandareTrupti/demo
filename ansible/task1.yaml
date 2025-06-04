@@ -2,8 +2,11 @@
   hosts: all
   vars:
     movie: "Spiderman"
-  vars_files:
-    - ./var.txt
+ # vars_files:
+ #  - ./var.txt
+  vars_prompt:
+    - name: movie
+      prompt: Enter the movie name  
   tasks:
     - name: 1st task
       debug:
