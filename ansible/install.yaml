@@ -1,0 +1,19 @@
+# yum abd apt module
+# conditions
+# privilege
+
+- name: installation file 
+  hosts: all
+  become: true
+  tasks: 
+    - name: install apache2
+      apt:
+       - name: apache2
+         state: latest
+         update_cache: yes
+      when: ansible_os_family == "Debian"
+    - name: install httpd
+      yum:
+       - name: httpd
+         state: present
+      when: ansible_os_family == "RedHat"        
