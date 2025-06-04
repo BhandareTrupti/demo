@@ -22,9 +22,9 @@
       vars:
         movie: "Ironman"
 
-    - name: hostname
+    - name: get hostname
       shell: hostname
       register: url
     - name: print hostname
       debug:
-        msg: "this is {{ url }}"          
+        msg: "this is {{ URL.stdout }}"          
