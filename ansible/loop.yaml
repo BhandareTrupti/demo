@@ -1,0 +1,19 @@
+- name: install multiple values
+  hosts: all
+  tasks:
+    - name: loop checks
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - apple
+        - banana
+        - mango  
+
+    - name: loop checks -2
+      package:
+       name: "{{ item }}"
+       state: latest
+      loop:
+        - vim
+        - wget
+        - nginx    

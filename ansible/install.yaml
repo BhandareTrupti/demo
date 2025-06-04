@@ -23,4 +23,17 @@
       package:
         name: nginx
         state: present
-      when: ansible_os_family == "Debian"       
+      when: ansible_os_family == "Debian"   
+
+    - name: install nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+    - name: print list
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - apple
+        - banana
+        - mango          
