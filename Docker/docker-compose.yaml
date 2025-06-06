@@ -4,11 +4,11 @@ services:
   webserver:
     image: trupti660/image:v1
     ports:
-      - "80:80"
+      - "81:80"
     environment:
       - department=dev
 
   backend:
     image: trupti660/image:alpine     
     ports:
-      - "8081:80"
+      - "8080:80"
